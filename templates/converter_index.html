@@ -1,0 +1,37 @@
+{%extends 'base.html' %}
+
+{% block head %}
+<title>Amaan's Weight Converter</title>
+{%endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Amaan's Weight Converter</h1>
+    <h4 style="text-align: center">Enter your weight in kilograms or pounds</h4>
+    
+    <form action="/weight_converter" method = "POST" align = "center">
+    
+        <table align="center">
+            <tr>
+                <th>Kilograms</th>
+                <th></th>
+                <th>Pounds</th>
+            </tr>
+                <tr>
+                    <td><input type="text" name= "kg_content" id="kg_content" value = "{{cData.kg}}" onclick="getElementById('lb_content').value=''"></td>
+                    <td></td>
+                    <td>
+                        <input type="text" name= "lb_content" id="lb_content" value = "{{cData.lb}}" onclick="getElementById('kg_content').value=''"> 
+                    </td>
+                </tr>
+        </table>
+        
+        <br>
+        <input type="submit" value="Convert">
+        
+        <button onClick="getElementById('kg_content').value='';getElementById('lb_content').value='';">Reset</button>
+    </form>
+    <br> 
+    <h1 style="text-align: center"><a href = "/">Home</a></h1>
+</div>
+{%endblock %}
